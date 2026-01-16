@@ -1,0 +1,18 @@
+package models
+
+import (
+  "gorm.io/gorm"
+  "github.com/google/uuid"
+  "time"
+)
+
+type Comment struct {
+  ID uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+  PostId uuid.UUID `gorm:"type:uuid" json:"post_id"`
+  UserId uuid.UUID `gorm:"type:uuid" json:"user_id"`
+  ParentId uuid.UUID `gorm:"type:uuid" json:"parent_id"`
+  Content string `gorm:"not null" json:"content"`
+  IsApproved bool `gorm:"default:true" json:"is_approved"`
+  CreatedAt time.Time `gorm:"not null" json:"created_at"`
+  UpdatedAt time.Time `gorm:"not null" json:"updated_at"`
+}
