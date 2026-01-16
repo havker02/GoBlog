@@ -13,6 +13,6 @@ type Comment struct {
   ParentId uuid.UUID `gorm:"type:uuid" json:"parent_id"`
   Content string `gorm:"not null" json:"content"`
   IsApproved bool `gorm:"default:true" json:"is_approved"`
-  CreatedAt time.Time `gorm:"not null" json:"created_at"`
-  UpdatedAt time.Time `gorm:"not null" json:"updated_at"`
+  CreatedAt time.Time `json:"created_at"`
+  UpdatedAt time.Time `json:"updated_at"`
 }

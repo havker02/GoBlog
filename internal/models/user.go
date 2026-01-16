@@ -15,6 +15,6 @@ type User struct {
   Bio string `json:"bio"`
   Role string `gorm:"default:user" json:"role"`
   IsActive bool `gorm:"default:true" json:"is_active"`
-  CreatedAt time.Time `json:"createf_at"`
+  CreatedAt time.Time `json:"created_at"`
   UpdatedAt time.Time `json:"updated_at"`
 }
