@@ -13,4 +13,8 @@ type Reaction struct {
   Type string `gorm:"not null;default:like" json:"type"`
   CreatedAt time.Time `json:"created_at"`
   UpdatedAt time.Time `json:"updated_at"`
+
+  // relations
+  User User `gorm:"foreignKey:UserId" json:"user"`
+  Post []Post `gorm:"foreignKey:PostId" json:"post"`
 }

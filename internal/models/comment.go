@@ -15,4 +15,9 @@ type Comment struct {
   IsApproved bool `gorm:"default:true" json:"is_approved"`
   CreatedAt time.Time `json:"created_at"`
   UpdatedAt time.Time `json:"updated_at"`
+
+  // relations
+  User []User `gorm:"foreignKey:UserId" json:"user"`
+  Post []Post `gorm:"foreignKey:PostId" json:"post"`
+  Parent []Comment `gorm:"foreignKey:ParentId" json:"parent"`
 }
